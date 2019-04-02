@@ -41,9 +41,3 @@ ggplot(NULL, aes(x = pvec)) +
         xlab("P value")
 dev.off()
 
-
-for(i in 1:nrow(CEMS_data)) {
-        result <- t.test(CEMS_data[i, 1:5], CEMS_data[i, 6:10], 
-                         paired = F, var.equal = T)
-        CEMS_data$pvalue[i] <- result$p.value
-}
